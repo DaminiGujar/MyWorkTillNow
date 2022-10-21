@@ -33,6 +33,28 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        
+        
+        
+        
+        You can run it as a docker container as shown below:
+
+### Creating Containers
+# clear package from STS:
+
+- mvn clean package
+
+### Running Container
+#### Basic
+- docker images
+- docker run --env RDS_URL=jdbc:h2:mem:microservicedb --env RDS_DRIVER_CLASS=org.h2.Driver --env RDS_USERNAME=sa --env RDS_PASSWORD=password --env RDS_DIALECT=org.hibernate.dialect.H2Dialect --publish 8080:8080 manpreetsinghbindra/aws-product-service:1.0.0-RELEASE
+
+#### Push Image to Docker Hub
+```
+docker login
+docker push @@@REPO_NAME@@@/aws-product-service:1.0.0-RELEASE
+
+E.g.: docker push manpreetsinghbindra/aws-product-service:1.0.0-RELEA
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
